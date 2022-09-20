@@ -18,3 +18,17 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+span{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.info-text{
+  color: #2b5be2;
+}
+
+li{
+  color: #2b5be2;
+  font-weight: bold;
+}

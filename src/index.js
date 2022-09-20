@@ -3,6 +3,7 @@ import { fetchCountries } from './js/fetchCountries';
 import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+const body = document.querySelector('body');
 const inpEl = document.getElementById('search-box');
 const listEl = document.querySelector('.country-list');
 const infoEl = document.querySelector('.country-info');
@@ -62,10 +63,23 @@ function createMarkupInfo(data){
     return data 
         .map(({name, capital, population, flags, languages}) =>
         `<h1><img src = "${flags.png}" alt= "${name.official}" width = "40" height = "40">${name.official}</h1>
-        <p>Capital: ${capital}</p>
-        <p>Population: ${population}</p>
-        <p>Languages: ${Object.values(languages)}</p>`
+        <p><span>Capital</span>: <span class = "info-text">${capital}</span></p>
+        <p><span>Population</span>: <span class = "info-text">${population}</span></p>
+        <p><span>Languages</span>: <span class = "info-text">${Object.values(languages)}</span></p>`
     );
 }
 
 inpEl.addEventListener('input', debounce(inpHendler, DEBOUNCE_DELAY));
+
+inpEl.style.cssText = `
+border-radius: 8px;
+color: #0089ff;
+`;
+
+listEl.style.cssText = `
+list-style: none;
+`;
+
+body.style.cssText = `
+background-color: #5ed3cb75;
+`;
