@@ -31,4 +31,16 @@ span{
 li{
   color: #2b5be2;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
+
+.country-name{
+  display: flex;
+  align-items: center;
+}
+
+img{
+  margin-right: 10px;
+}
+

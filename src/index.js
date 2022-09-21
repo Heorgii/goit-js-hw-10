@@ -53,7 +53,7 @@ function renderMarkup(data) {
 function createMarkupList(data) {
     return data
         .map(({ name, flags }) =>
-            `<li><img src = "${flags.png}" alt= "${name.official}" width = "60" height = "70">${name.official} </li>`,
+            `<li><img src = "${flags.svg}" alt= "${name.official}" width = "60" height = "70">${name.official} </li>`,
     )
     .join('');
 }
@@ -62,7 +62,7 @@ function createMarkupInfo(data){
 
     return data 
         .map(({name, capital, population, flags, languages}) =>
-        `<h1><img src = "${flags.png}" alt= "${name.official}" width = "40" height = "40">${name.official}</h1>
+        `<h1 class = "country-name"><img src = "${flags.svg}" alt= "${name.official}" width = "70" height = "70">${name.official}</h1>
         <p><span>Capital</span>: <span class = "info-text">${capital}</span></p>
         <p><span>Population</span>: <span class = "info-text">${population}</span></p>
         <p><span>Languages</span>: <span class = "info-text">${Object.values(languages)}</span></p>`
